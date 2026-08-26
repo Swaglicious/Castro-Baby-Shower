@@ -1,11 +1,19 @@
-/* *{
+/* reset */
+*{
     padding:0;
     margin:0;
     box-sizing: border-box;
 }
 
+/* Global styles */
+body {
+  font-family: cursive;
+  background-color: #af9270;
+  color: #FFFDD0;
+}
 
-body{
+/* landing page (index.html) page styles */
+.landing-page{
     font-family:cursive;
     background-image: url('images/background.png');
     background-repeat: no-repeat; 
@@ -21,35 +29,22 @@ body{
     overflow-x: hidden;
 }
 
-
-h1 {
+.landing-page header{
   font-size: 2.2rem;
   text-align: center;
-  margin: 20px 0;
+  margin:150px 0;
   font-weight: 400;
   letter-spacing: 1px;
-  margin-top: 100px;
-  margin-bottom: -75px;
 }
 
-p {
-  font-size: 1.1rem;
-  text-align: center;
-  margin: 15px 0 30px 0;
-  font-style: italic;
-  animation: pulse 2s infinite; 
-  margin-bottom: 100px;
-  margin-top:-75px;
-}
-
-
-.invitation {
-  display: flex;
+.invitation{
+  display:flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  max-width: 400px; 
+  width:90%;
+  max-width: 400px;
   margin: 0 auto;
+  margin-top: -100px;
 }
 
 .invitation a {
@@ -57,11 +52,158 @@ p {
   width: 100%;
 }
 
-.invitation img {
-  width: 100%;
+.invitation img{
+  width:110%;
   height: auto;
   display: block;
   border-radius: 8px;
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  margin-left:-25px;
+}
 
- 
+.landing-page p{
+  font-size: 1.1rem;
+  text-align: center;
+  font-style: italic;
+  animation: pulse 2s infinite; 
+  margin-bottom: 100px;
+  margin-top: 25px;
+}
+
+/* invitation (invitation.html page styles */
+.container{
+  background-image: none;
+  background-color: #b8936c;
+  color:#FFFDD0;
+  width:100%;
+}
+
+/* navigation styles */
+nav{
+  width:100%;
+  font-weight: bold;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  background-color: #826349;
+}
+
+nav a{
+  text-decoration: none;
+  color:#ffff;
+}
+
+nav ul{
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 1.05em;
+  background-color: #826349;
+  padding: 15px 0;
+  margin: 0;
+  width: 100%;
+  align-items: center;
+}
+
+
+.nav-img img {
+    width: 38px;      
+    height: auto;     
+    display: inline-block; 
+    vertical-align:text-top;
+}
+
+
+/* rsvp section */
+.rsvp-section {
+  padding: 100px 100px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Container */
+.rsvp-container {
+  max-width: 1500px;
+  width: 100%;
+  background-color: #b59675;
+  border: 2.2px solid #e2ceb1;
+  border-radius: 15px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Text */
+.section-title {
+  font-family: cursive;
+  font-size: 2.5rem;
+  color: #8a2334;
+  letter-spacing: 1px;
+  margin-bottom: 2.5px;
+}
+
+/* Decorative Heart Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.divider .line {
+  width: 40px;
+  height: 1px;
+  background-color: #7b1e2d;
+}
+
+.divider .heart {
+  color: #7b1e2d;
+  font-size: 12px;
+}
+
+/* Text Formatting */
+.rsvp-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #efefeb;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.rsvp-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center; 
+  gap: 15px;
+}
+
+
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 250px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.call-btn, .text-btn{
+  background-color: #7b1e2d;
+  color: #ffffff;
+  border: 2px solid #7b1e2d;
+}
+
+.call-btn:hover, .text-btn:hover{
+  background-color: #5e1622;
+}
+

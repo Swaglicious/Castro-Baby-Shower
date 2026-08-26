@@ -6,19 +6,23 @@
         <title>Castro's Baby Shower</title>
         <link rel="stylesheet" href="style.css">
     </head>
+
+
     <body>
+       <!-- nav section -->
+    <nav>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#Details">Details</a></li>
+                  <li><a href="#Location">Location</a></li>
+                  <li><span class="nav-img"><img src="images/concha.png" alt="Brown Concha Heart"></span></li>
+                  <li><a href="#Registry">Registry</a></li>
+                  <li><a href="#Raffle">Raffle</a></li>
+                  <li><a href="#rsvp-section">RSVP</a></li>
+                  </ul>
+             </nav>
         <!-- container for whole page -->
          <main class="container">
-            <!-- nav section -->
-             <nav>
-                <a href="#Home">Home</a>
-                <a href="#Details">Details</a>
-                <a href="#Location">Location</a>
-                <span class="nav-img"><img src="images/concha.png" alt="Brown Concha Heart"></span>
-                <a href="#Registry">Registry</a>
-                <a href="#Raffle">Raffle</a>
-                <a href="#rsvp">RSVP</a>
-             </nav>
 
              <!-- header section -->
              <header id="Home">
@@ -31,7 +35,7 @@
              </header>
 
              <!-- details section -->
-             <section id="details">
+             <section id="Details">
                 <h2>The Details</h2>
                 <p>Mark your calendars & come celebrate with us!</p>
 
@@ -80,10 +84,42 @@
                     be entered into our diaper raffle!</p>
                 </section>
 
-                <!-- rsvp
-                 <section id="rsvp">
+                <!-- rsvp -->
+                 <section class="rsvp-section">
+                  <div class="rsvp-container">
+               <!-- Section Title & Ornamental Divider -->
+                  <h2 class="section-title">RSVP</h2>
+                   <div class="divider">
+                     <span class="line"></span>
+                     <span class="heart">♥</span>
+                     <span class="line"></span>
+                  </div>
 
-                 </section> -->
+               <!-- RSVP Description -->
+                  <p class="rsvp-text">
+                     We'd love to celebrate with you!<br>
+                     Please RSVP by contacting us<br>
+                     at the number below.
+                  </p>
+
+
+               <!-- Action Buttons -->
+                  <div class="rsvp-buttons">
+
+                     <!-- change number later -->
+                     <a href="tel:2105551234" class="btn call-btn">
+                     <span class="btn-icon">📞</span>
+                     CALL TO RSVP
+                     </a>
+
+                     <!-- change number later -->
+                     <a href="sms:2105551234" class="btn text-btn">
+                     <span class="btn-icon">💬</span>
+                     TEXT TO RSVP
+                     </a>
+                  </div>
+               </div>
+               </section>
 
                  <footer>
                     <h4>We Can't Wait To Celebrate With You</h4>
