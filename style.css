@@ -1078,12 +1078,12 @@ footer {
   }
 
   .landing-page header {
-    margin: 20px 0 10px 0 !important; /* Drastically reduces the massive 200px top margin */
+    margin: 50px 0 10px 0 !important; /* Drastically reduces the massive 200px top margin */
     font-size: 2rem;
   }
 
   .landing-page img {
-    width: 45% !important; /* Shrinks the envelope so it fits horizontally */
+    width: 85% !important; /* Shrinks the envelope so it fits horizontally */
     max-width: 180px;
     margin: 0 auto;
   }
