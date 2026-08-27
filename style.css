@@ -8,7 +8,6 @@
 /* GLOBAL STYLES */
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-color: #af9270;
   color: #FFFDD0;
 }
 
@@ -92,6 +91,7 @@ body {
 /* INVITATION CONTAINER STYLES */
 .container{
   background-image: none;
+  background-color: #af9270;
   color:#FFFDD0;
   width:100%;
   margin:0;
