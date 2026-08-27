@@ -12,10 +12,10 @@ body {
   color: #FFFDD0;
 }
 
-/* landing page (index.html) page styles */
+/* LANDING PAGE STYLES */
 .landing-page{
     font-family: "Imperial Script", cursive;
-    background-image: url('images/background.png');
+    background-image: url('images/background-light.png');
     background-repeat: no-repeat; 
     background-position: center; 
     background-size: cover; 
@@ -52,12 +52,32 @@ body {
   width: 100%;
 }
 
+/* ENVELOPE STYLES & ANIMATIONS */
 .invitation img{
   width:110%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: 16px; 
   margin-left:-25px;
+  animation: envelopeFloat 4s ease-in-out infinite;
+  
+  /* Multi-layered shadow for 3D realism */
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.invitation img:hover {
+  transform: translateY(-8px) scale(1.03);
+  
+  /* Deepens shadow on hover */
+  box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.2),
+    0 18px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .landing-page p{
@@ -69,12 +89,14 @@ body {
   margin-top: 25px;
 }
 
-/* invitation (invitation.html) page styles */
+/* INVITATION CONTAINER STYLES */
 .container{
   background-image: none;
   background-color: #b8936c;
   color:#FFFDD0;
   width:100%;
+  margin:0;
+  padding:0;
 }
 
 /* NAVIGATION STYLES */
@@ -89,6 +111,17 @@ nav{
 nav a{
   text-decoration: none;
   color:#ffff;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #f9e8d0;
+  text-shadow: 
+    0 0 4px rgba(255, 232, 198, 0.5),
+    0 0 8px rgba(255, 232, 198, 0.3);
+  transform: scale(1.03);
 }
 
 nav ul{
@@ -104,18 +137,57 @@ nav ul{
   align-items: center;
 }
 
-
 .nav-img img {
     width: 38px;      
     height: auto;     
     display: inline-block; 
     vertical-align:text-top;
+    transition: transform 0.3s ease;
+}
+
+.nav-img:hover img {
+    transform: rotate(12deg) scale(1.15);
 }
 
 /* HOME SECTION */
-#Home{
-  text-align:center;
-  padding: 50px 50px;
+#Home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top:0;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 .01px;
+  box-sizing: border-box;
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
+}
+
+.header-flourish {
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.left-flourish {
+  animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.right-flourish {
+  animation: slideInRight 1.2s ease-out forwards;
 }
 
 #Home p:first-of-type{
@@ -129,7 +201,7 @@ nav ul{
   font-size: 6rem;
   font-family: "MonteCarlo", cursive;
   letter-spacing: 2px;
-  color:#feecda;
+  color:#ffe8c6;
   margin-top:-40px;
   font-weight: 100;
   margin-bottom:25px;
@@ -138,7 +210,7 @@ nav ul{
 .subtitle{
   font-family: 'Times New Roman', Times, serif;
   font-size: 2.2rem;
-  letter-spacing: .2cap;
+  letter-spacing: 0.2em;
   margin-top:-30px;
   color:#fffffd;
   margin-bottom:20px;
@@ -159,9 +231,13 @@ nav ul{
   background-color: #7b1e2d;
 }
 
-.bigger-divider .heart {
+.bigger-divider .heart,
+.section-divider .heart,
+.divider .heart {
   color: #7b1e2d;
   font-size: 25px;
+  display: inline-block;
+  animation: heartPulse 2.5s ease-in-out infinite;
 }
 
 .date{
@@ -170,7 +246,7 @@ nav ul{
   margin-top: 15px;
   color:#fffffd;
   text-transform: uppercase;
-  letter-spacing: .1cap;
+  letter-spacing: 0.1em;
 }
 
 .tagline{
@@ -178,11 +254,11 @@ nav ul{
   font-size: 1.1rem;
   margin-top: 15px;
   color:#fffffd;
-  letter-spacing: .18cap;
+  letter-spacing: 0.18em;
   margin-bottom:15px;
 }
 
-/* SECTION */
+/* SECTION DIVIDERS */
 .section-divider{
   display:flex;
   align-items:center;
@@ -202,7 +278,7 @@ nav ul{
 
 .line-svg {
   width: 100%;
-  height: -1px; /* Controls how deep the curve sags */
+  height: 20px;
 }
 
 .line-svg path{
@@ -210,112 +286,713 @@ nav ul{
 }
 
 .section-divider .heart {
-  color: #7b1e2d;
-  font-size: 25px;
   align-content: top;
   margin-top:20px;
 }
 
 /* DETAILS SECTION */
-.Details{
-  padding:100px 100px;
-  display: flex;
-  justify-content: center;
+#Details{
+  text-align:center;
+  padding:40px 20px;
+  color:#feecda;
+  margin-top:-50px;
 }
 
-
-
-/* RSVP SECTION */
-.rsvp-section {
-  padding: 100px 100px;
-  display: flex;
-  justify-content: center;
+#Details h2{
+  font-family: "MonteCarlo", cursive;
+  font-size:2.5rem;
+  color:#8a2334;
+  letter-spacing:1px;
+  font-weight: normal;
+  margin-bottom: 20px;
 }
 
-/* Card Container */
+.sub{
+  font-size: 1.2rem;
+  color:#fffffd;
+  margin-bottom: 18px;
+  margin-top:-28px;
+}
+
+/* SHARED INFO CARD HOVER ANIMATIONS */
+.cards,
+.location-card,
+.registry-card,
+.raffle-card,
 .rsvp-container {
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease;
+}
+
+.cards:hover,
+.location-card:hover,
+.registry-card:hover,
+.raffle-card:hover,
+.rsvp-container:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 253, 208, 0.6);
+  
+  /* Outer glow effect replacing the inset shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(138, 35, 52, 0.6); 
+}
+
+.cards {
+  background-color: rgba(60, 40, 25, 0.35); 
+  border: 1px solid rgba(255, 253, 208, 0.2); 
+  border-radius: 15px;
+  padding: 30px 20px;
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.flow{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.cards img {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  width:50px;
+  height:auto;
+  transition: transform 0.3s ease;
+}
+
+.cards:hover img {
+  transform: scale(1.12);
+}
+
+.cards h3 {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  color: #fffdd0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cards p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #efefeb;
+  margin: 0;
+  animation: none; 
+}
+
+/* LOCATION SECTION */
+#Location {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
   max-width: 950px;
   width: 100%;
-  background-color: #b59675;
-  border: 2.2px solid #e2ceb1;
+  background-color: rgba(60, 40, 25, 0.35); 
+  border: 1px solid rgba(255, 253, 208, 0.2); 
+  border-radius: 15px;
+  padding: 40px 50px;
+  gap: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.location-image-container {
+  flex: 1;
+  max-width: 400px;
+  height: 262px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.location-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.location-card:hover .location-img {
+  transform: scale(1.04);
+}
+
+.location-details {
+  flex: 1.2;
+  background-color: rgba(97, 66, 40, 0.45);
+  border: 1px solid rgba(255, 253, 208, 0.15);
+  border-radius: 15px;
+  padding: 25px 30px;
+  text-align: center;
+  color: #fffdd0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.location-details h2 {
+  font-family: "MonteCarlo", cursive;
+  font-size: 2.5rem;
+  font-weight:bold;
+  margin-bottom: 15px;
+  color: #8a2334;
+  margin-top:-30px;
+}
+
+.venue-name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #efefeb;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 3px;
+  margin-top:-20px;
+}
+
+.parking-info{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #efefeb;
+  font-size: .7rem;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-bottom: 15px;
+  margin-top:-5px;
+}
+
+/* REGISTRY SECTION */
+#Registry {
+  display: flex;
+  justify-content: center;
+  padding:20px 20px;
+}
+
+.registry-card {
+  width: 100%;
+  max-width: 950px;
+  background-color: rgba(60, 40, 25, 0.35); 
+  border: 1px solid rgba(255, 253, 208, 0.2); 
   border-radius: 15px;
   padding: 40px 50px;
   text-align: center;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header Text */
+.registry-card h2 {
+  font-family: "MonteCarlo", cursive;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #8a2334;
+  margin-bottom: 10px;
+  margin-top:-30px;
+}
+
+.registry-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #efefeb;
+  margin-bottom: 25px;
+  margin-top:-10px;
+}
+
+.bttn-group {
+  color:#efefeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; 
+}
+
+/* RSVP SECTION */
+.rsvp-section {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.rsvp-container {
+  max-width: 950px;
+  width: 100%;
+  background-color: rgba(60, 40, 25, 0.35); 
+  border: 1px solid rgba(255, 253, 208, 0.2); 
+  border-radius: 15px;
+  padding: 25px 40px;
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 .section-title {
-  font-family: cursive;
+  font-family: "MonteCarlo", cursive;
   font-size: 2.5rem;
   color: #8a2334;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
   margin-bottom: 2.5px;
 }
 
-/* Decorative Heart Divider */
 .divider {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
+  margin-top:-10px;
 }
 
 .divider .line {
   width: 40px;
-  height: 1px;
+  height: 2.5px;
   background-color: #7b1e2d;
 }
 
-.divider .heart {
-  color: #7b1e2d;
-  font-size: 12px;
-}
-
-/* Text Formatting */
 .rsvp-text {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   color: #efefeb;
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-/* Buttons */
 .rsvp-buttons {
   display: flex;
   flex-direction: row;
   gap: 15px;
   justify-content: center; 
-  gap: 15px;
 }
 
+.btn-icon{
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
 
+.call-btn:hover .btn-icon,
+.text-btn:hover .btn-icon {
+  transform: rotate(-10deg) scale(1.2);
+}
 
-.btn {
+/* DIAPER RAFFLE */
+#Raffle {
   display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.raffle-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 950px;
+  background-color: rgba(60, 40, 25, 0.35); 
+  border: 1px solid rgba(255, 253, 208, 0.2); 
+  border-radius: 15px;
+  padding: 30px 40px;
+  gap: 40px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.raffle-image-container {
+  flex-shrink: 0;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.raffle-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-left:-70px;
+  transition: transform 0.4s ease;
+}
+
+.raffle-card:hover .raffle-img {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.raffle-details {
+  flex: 0 1 450px; 
+  text-align: left;
+  color: #fffdd0;
+  padding: 0;
+}
+
+.raffle-details p{
+  margin-left:30px;
+  letter-spacing: 0.11em;
+}
+
+.raffle-details h2 {
+  font-family: "MonteCarlo", cursive;
+  font-size: 3.2rem;
+  font-weight: normal;
+  color: #8a2334;
+  margin: 0 0 10px 0;
+  text-align: left;
+  line-height: 1;
+}
+
+.raffle-text,
+.raffle-subtext {
+  font-family: 'Times New Roman', Times, serif;
+  color: #efefeb;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+  padding: 0;
+  animation: none;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(60, 40, 25, 0.45); 
+  border-top: 1px solid rgba(255, 253, 208, 0.15);
+  padding: .1px 0; 
+  display: flex;
+  justify-content: center;
+  margin-top:40px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1px 1px; 
+}
+
+.footer-text {
+  text-align: center;
+  flex: 1;
+  width:100%;
+}
+
+.footer-text h4 {
+  font-family: "MonteCarlo", cursive;
+  font-size: 2.5rem;
+  color:#ffe8c6;
+  margin: 0 0 6px 0;
+  line-height: 1;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.footer-text p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9rem;
+  color: #efefeb;
+  margin: 0;
+}
+
+.footer-flourish {
+  width: 75px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* SHARED 3D BUTTON STYLES */
+.map-btn,
+.registry-btn,
+.call-btn,
+.text-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 250px;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  background: linear-gradient(180deg, #7b1e2d 0%, #4a101a 100%);
+  color: #efefeb;
+  padding: 12px 24px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-family:'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #300a11;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-in-out;
 }
 
-.call-btn, .text-btn{
-  background-color: #7b1e2d;
-  color: #ffffff;
-  border: 2px solid #7b1e2d;
+.map-btn:hover,
+.registry-btn:hover,
+.call-btn:hover,
+.text-btn:hover {
+  background: linear-gradient(180deg, #8c2234 0%, #591320 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.call-btn:hover, .text-btn:hover{
-  background-color: #5e1622;
+/* KEYFRAME ANIMATIONS */
+@keyframes envelopeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.18);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.12);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================
+   TABLET & MOBILE RESPONSIVE STYLES
+   ========================================== */
+
+/* TABLET STYLES (Under 992px) */
+@media (max-width: 992px) {
+  .header-flourish {
+    width: 180px;
+  }
+
+  #Home h1 {
+    font-size: 4.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  .location-card,
+  .registry-card,
+  .rsvp-container,
+  .raffle-card {
+    padding: 30px 25px;
+  }
+}
+
+/* MOBILE STYLES (Under 768px) */
+@media (max-width: 768px) {
+  /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
+  .landing-page {
+    background-image: url('images/background-mobile.png'); /* Replace with your mobile image path */
+    background-position: center;
+    background-size: cover;
+    justify-content: center; /* Center contents vertically */
+    padding: 20px 0;
+  }
+
+  .landing-page header {
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+  }
+
+  /* MOBILE CENTERED ENVELOPE */
+  .invitation {
+    margin: 0 auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .invitation img {
+    margin-left: 0; /* Remove offset so image aligns dead center */
+    width: 100%;
+  }
+
+  .landing-page p {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  /* NAVIGATION RESPONSIVENESS */
+  nav ul {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 12px 10px;
+    font-size: 0.95em;
+  }
+
+  nav li{
+    font-size: 12px;
+  }
+
+  /* HOME SECTION & FLOURISHES */
+  .header-container {
+    flex-direction: column;
+    padding: 20px 10px 0 10px;
+  }
+
+  .header-flourish {
+    display: none;
+  }
+
+  #Home h1 {
+    font-size: 3.5rem;
+    margin-top: -10px;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    margin-top: -10px;
+  }
+
+  .date {
+    font-size: 1.4rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  /* CARDS & LAYOUTS STACKING */
+  .flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .location-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .location-image-container {
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+  }
+
+  .location-details {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  .location-details h2 {
+    margin-top: 0;
+  }
+
+  .registry-card,
+  .rsvp-container {
+    padding: 25px 20px;
+  }
+
+  .registry-card h2,
+  .section-title {
+    margin-top: 0;
+  }
+
+  .rsvp-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rsvp-buttons a {
+    width: 100%;
+  }
+
+  /* RAFFLE SECTION STACKING */
+  .raffle-card {
+    flex-direction: column;
+    padding: 25px 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .raffle-image-container {
+    width: 120px;
+  }
+
+  .raffle-img {
+    margin-left: 0;
+  }
+
+  .raffle-details {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .raffle-details p {
+    margin-left: 0;
+  }
+
+  .raffle-details h2 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  /* FOOTER RESPONSIVENESS */
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  .footer-flourish {
+    display: none;
+  }
+}

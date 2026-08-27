@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Castro's Baby Shower</title>
+        <link rel="icon" type="image/svg+xml" href="images/baby.svg">
 
         <!-- font -->
          <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,31 +19,41 @@
        <!-- nav section -->
     <nav>
                <ul>
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html">Invitation</a></li>
                   <li><a href="#Details">Details</a></li>
                   <li><a href="#Location">Location</a></li>
-                  <li><span class="nav-img"><img src="images/concha.png" alt="Brown Concha Heart"></span></li>
+                  <li><a href="index.html" class="nav-img"><span class="nav-img"><img src="images/concha.png" alt="Brown Concha Heart"></span></a></li>
                   <li><a href="#Registry">Registry</a></li>
                   <li><a href="#Raffle">Raffle</a></li>
-                  <li><a href="#rsvp-section">RSVP</a></li>
+                  <li><a href="#rsvp">RSVP</a></li>
                   </ul>
              </nav>
         <!-- container for whole page -->
          <main class="container">
-
-             <!-- header section -->
+            <!-- HEADER SECTION -->
              <header id="Home">
-                <p>Please Join Us For A</p>
-                <h1>Baby Shower</h1>
-                <p class="subtitle">celebrating baby castro</p>
-                <div class="bigger-divider">
+               <div class="header-container">
+                  <!-- Left Flourish -->
+                  <img src="images/L-edge.png" alt="Decorative Flourish" class="header-flourish left-flourish">
+
+                  <!-- Center Text Content -->
+                  <div class="header-text">
+                     <p>Please Join Us For A</p>
+                     <h1>Baby Shower</h1>
+                     <p class="subtitle">celebrating baby castro</p>
+                     <div class="bigger-divider">
                      <span class="line"></span>
                      <span class="heart">♥</span>
                      <span class="line"></span>
+                     </div>
+                     <p class="date">Saturday • October 17, 2026</p>
+                     <p class="tagline">We can't wait to celebrate this sweet little blessing with you!</p>
                   </div>
-                <p class="date">Saturday • October 17, 2026</p>
-                <p class="tagline">We can't wait to celebrate this sweet little blessing with you.</p>
-             </header>
+
+                  <!-- Right Flourish -->
+                  <img src="images/R-edge.png" alt="Decorative Flourish" class="header-flourish right-flourish">
+               </div>
+               </header>
 
              <!-- divider -->
               <div class="section-divider">
@@ -65,55 +76,86 @@
              <!-- details section -->
              <section id="Details">
                 <h2>The Details</h2>
-                <p>Mark your calendars & come celebrate with us!</p>
+                <p class="sub">Mark your calendars & come celebrate with us!</p>
 
+                <div class="flow">
                 <!-- date and time cards -->
                  <div class="cards">
                     <!-- add icon img here -->
+                     <img src="images/heart.png" alt="Outline of Heart Icon">
                      <h3>Date</h3>
                      <p>Saturday<br> October 10, 2026</p>
                  </div>
 
                  <div class="cards">
-                    <!-- add time icon here -->
+                    <img src="images/clock.png" alt="Outline of Clock Icon">
                      <h3>Time</h3>
                      <p>0:00 PM<br> to 0:00 PM</p>
+                 </div>
                  </div>
              </section>
 
              <!-- Location Section -->
               <section id="Location">
-                <!-- add venue img here -->
-                 <div>
-                    <h3>Location</h3>
-                    <p>McQueen Park Activity Center</p>
-                    <address>510 N Horne St, Gilbert, AZ 85233</address>
-                    <a href="https://share.google/SXFArAJBchk1j6KXX" target="_blank" class="btn">View Map</a>
-                 </div>
-              </section>
+               <div class="location-card">
+                  <div class="location-image-container">
+                     <img src="images/venue.jpeg" alt="Venue Photo" class="location-img">
+                  </div>
+
+                  <div class="location-details">
+                     <h2>Location</h2>
+                     <p class="venue-name">McQueen Park Activity Center</p>
+                     <p class="parking-info">Parking is available in the main lot.</p>
+                     <a href="https://share.google/SXFArAJBchk1j6KXX" target="_blank" class="bttn-group map-btn">VIEW DIRECTIONS</a>
+                  </div>
+               </div>
+               </section>
 
               <!-- Registry -->
                <section id="Registry">
-                <h3>Baby Registry</h3>
-                <p>Your presence is the greatest gift! If you wish to give extra, we are registered at:</p>
+                  <div class="registry-card">
+                     <h2>Baby Registry</h2>
+                     <p class="registry-text">
+                        Your presence is the greatest gift of all! For those<br>
+                        who would like to shower Baby Castro with a little<br>
+                        something extra, we've created registries at<br>
+                        the following stores.
+                     </p>
 
-                <div class="bttn-group">
-                    <a href="https://www.amazon.com/baby-reg/missy-castro-november-2026-mesa/2XXWWS4D7SEHN" class="btn">Amazon</a>
-                    <a href="https://www.target.com/gift-registry/gift/savana-28https://www.target.com/gift-registry/gift/savana-28" class="btn">Target</a>
-                </div>
-               </section>
+                     <div class="bttn-group">
+                        <a href="https://www.amazon.com/baby-reg/missy-castro-november-2026-mesa/2XXWWS4D7SEHN" target="_blank" class="registry-btn">AMAZON</a>
+                        <a href="https://www.target.com/gift-registry/gift/savana-28" target="_blank" class="registry-btn">TARGET</a>
+                     </div>
+                  </div>
+                  </section>
 
                <!-- Raffle -->
-                <section id="Raffle">
-                    <!-- enter diaper img here later -->
-                     <h3>Diaper Raffle</h3>
-                     <p>Want a chance to win a special prize?<br>
-                        Bring one pack of diapers in any size & you'll<br>
-                    be entered into our diaper raffle!</p>
-                </section>
+              <section id="Raffle">
+               <div class="raffle-card">
+                  <!-- Left Column Image -->
+                  <div class="raffle-image-container">
+                     <img src="images/diaper.png" alt="Diaper Illustration" class="raffle-img">
+                  </div>
+
+                  <!-- Right Column (Title + Text Grouped Together) -->
+                  <div class="raffle-details">
+                     <h2>Diaper Raffle</h2>
+                     <p class="raffle-text">
+                     Want a chance to win a special prize?<br>
+                     Bring one package of diapers in any size<br>
+                     and you'll automatically be entered<br>
+                     into our diaper raffle!
+                     </p>
+                     <p class="raffle-subtext">
+                     The more diapers you bring, the more<br>
+                     chances you have to win.
+                     </p>
+                  </div>
+               </div>
+               </section>
 
                 <!-- rsvp -->
-                 <section class="rsvp-section">
+                 <section class="rsvp-section" id="rsvp">
                   <div class="rsvp-container">
                <!-- Section Title & Ornamental Divider -->
                   <h2 class="section-title">RSVP</h2>
@@ -126,8 +168,8 @@
                <!-- RSVP Description -->
                   <p class="rsvp-text">
                      We'd love to celebrate with you!<br>
-                     Please RSVP by contacting us<br>
-                     at the number below.
+                     Please RSVP by contacting texting<br>
+                     or calling!
                   </p>
 
 
@@ -135,13 +177,13 @@
                   <div class="rsvp-buttons">
 
                      <!-- change number later -->
-                     <a href="tel:2105551234" class="btn call-btn">
-                     <span class="btn-icon">📞</span>
+                     <a href="tel:4805931471" class="btn call-btn">
+                     <span class="btn-icon">☏</span>
                      CALL TO RSVP
                      </a>
 
                      <!-- change number later -->
-                     <a href="sms:2105551234" class="btn text-btn">
+                     <a href="sms:4805931471" class="btn text-btn">
                      <span class="btn-icon">💬</span>
                      TEXT TO RSVP
                      </a>
@@ -149,10 +191,21 @@
                </div>
                </section>
 
-                 <footer>
-                    <h4>We Can't Wait To Celebrate With You</h4>
-                    <p>Made with love for Baby Castro ♥</p>
-                 </footer>
+                <footer>
+                     <div class="footer-container">
+                        <!-- Left Accent Flourish -->
+                        <img src="images/L-edge.png" alt="Decorative Flourish" class="footer-flourish left-flourish">
+
+                        <!-- Center Footer Content -->
+                        <div class="footer-text">
+                           <h4>We Can't Wait To Celebrate With You!</h4>
+                           <p>Made with love for Baby Castro ♥</p>
+                        </div>
+
+                        <!-- Right Accent Flourish -->
+                        <img src="images/R-edge.png" alt="Decorative Flourish" class="footer-flourish right-flourish">
+                     </div>
+                     </footer>
             </main>
     </body>
 
