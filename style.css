@@ -921,6 +921,10 @@ footer {
     margin-top:20px;
   }
 
+  .landing-page{
+    margin-top:20px;
+  }
+
   .invitation img {
     margin: 0 auto;
     width: 55%;
@@ -1061,5 +1065,31 @@ footer {
 
   .footer-flourish {
     display: none;
+  }
+}
+
+/* FIX FOR IPHONE / MOBILE LANDSCAPE MODE */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .landing-page {
+    min-height: 100dvh; /* Adapts properly to mobile browser bars */
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-top: 0 !important;
+  }
+
+  .landing-page header {
+    margin: 20px 0 10px 0 !important; /* Drastically reduces the massive 200px top margin */
+    font-size: 2rem;
+  }
+
+  .landing-page img {
+    width: 45% !important; /* Shrinks the envelope so it fits horizontally */
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .landing-page p {
+    font-size: 1.1rem;
+    margin: 10px 0;
   }
 }
