@@ -838,26 +838,9 @@ footer {
   }
 }
 
-/* TABLETS (Under 900px) */
-@media screen and (max-width: 900px) {
-  .location-card,
-  .registry-card,
-  .rsvp-container,
-  .raffle-card {
-    padding: 30px 25px;
-    max-width: 92%;
-  }
 
-  .flow {
-    padding: 0 15px;
-  }
 
-  .landing-page header {
-    margin: 100px 0;
-  }
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 781px) {
   /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
   .landing-page {
     background-image: url('images/background-mobile.png'); 
