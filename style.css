@@ -39,6 +39,7 @@ body {
   margin:150px 0;
   font-weight: 400;
   letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out forwards; /* Added Landing Animation */
 }
 
 .invitation{
@@ -49,6 +50,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   margin-top: -100px;
+  animation: fadeInUp 1.2s ease-out forwards; /* Added Landing Animation */
 }
 
 .invitation a {
@@ -88,7 +90,7 @@ body {
   font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
   text-align: center;
   font-style: italic;
-  animation: pulse 2s infinite; 
+  animation: pulse 2s infinite, fadeInUp 1.4s ease-out forwards; /* Combined pulse and entrance */
   margin-bottom: 100px;
   margin-top: 25px;
 }
@@ -747,6 +749,10 @@ footer {
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+#Home, #Details, #Location, #Registry, .rsvp-section, #Raffle {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 /* KEYFRAME ANIMATIONS */
 @keyframes envelopeFloat {
   0%, 100% {
@@ -808,22 +814,50 @@ footer {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================
    TABLET & MOBILE RESPONSIVE STYLES
    ========================================== */
+@media screen and (max-width: 1200px) {
+  .location-card,
+  .registry-card,
+  .rsvp-container,
+  .raffle-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
 
-/* TABLET STYLES (Under 992px) */
-@media (max-width: 992px) {
+/* TABLETS (Under 900px) */
+@media screen and (max-width: 900px) {
   .location-card,
   .registry-card,
   .rsvp-container,
   .raffle-card {
     padding: 30px 25px;
+    max-width: 92%;
+  }
+
+  .flow {
+    padding: 0 15px;
+  }
+
+  .landing-page header {
+    margin: 100px 0;
   }
 }
 
-/* MOBILE STYLES (Under 768px) */
-@media (max-width: 768px) {
+@media screen and (max-width: 700px) {
   /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
   .landing-page {
     background-image: url('images/background-mobile.png'); 
@@ -850,7 +884,7 @@ footer {
   .invitation img {
     margin: 0 auto;
     width: 55%;
-    height:auto;
+    height: auto;
   }
 
   .landing-page p {
@@ -867,7 +901,7 @@ footer {
     font-size: 0.95em;
   }
 
-  nav li{
+  nav li {
     font-size: 10px;
   }
 
@@ -876,6 +910,7 @@ footer {
     flex-direction: column;
     padding: 20px 10px 0 10px;
   }
+
 
   .header-flourish {
     display: none;
@@ -914,6 +949,7 @@ footer {
   .location-card {
     flex-direction: column;
     padding: 20px;
+    max-width: 100%;
   }
 
   .location-image-container {
@@ -934,6 +970,7 @@ footer {
   .registry-card,
   .rsvp-container {
     padding: 25px 20px;
+    max-width: 100%;
   }
 
   .registry-card h2,
@@ -956,6 +993,7 @@ footer {
     padding: 25px 20px;
     gap: 20px;
     text-align: center;
+    max-width: 100%;
   }
 
   .raffle-image-container {
