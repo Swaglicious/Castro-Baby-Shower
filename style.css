@@ -158,6 +158,7 @@ nav ul{
   padding-top:0;
   padding-bottom: 25px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .header-container {
@@ -851,6 +852,9 @@ footer {
 /* ==========================================
    TABLET & MOBILE RESPONSIVE STYLES
    ========================================== */
+/* ==========================================
+   TABLET & MOBILE HORIZONTAL RESPONSIVE STYLES
+   ========================================== */
 @media screen and (max-width: 1210px) and (min-width: 782px) {
   .location-card,
   .registry-card,
@@ -868,50 +872,78 @@ footer {
     margin-top: 10px; 
   }
 
-   .landing-page {
-    margin-top:-80px;
-    
-  }
-
-  .landing-page img{
-    width:80%;
-    height:auto;
+  /* Centering the landing page flex container */
+  .landing-page {
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center; 
+    text-align: center;      
+    min-height: 100vh;
+    padding: 20px 0; /* Add safety breathing room for short landscape screens */
   }
 
-  .raffle-img{
-    margin-left:10px;
+  /* REDUCE LARGE MARGINS FOR HORIZONTAL VIEWS */
+  .landing-page header {
+    margin: 10px 0 15px 0; /* Shrinks the massive 200px top margin so it fits */
   }
 
-.header-flourish,
-.footer-flourish {
-  width: clamp(100px, 15vw, 250px);
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
+  .landing-page p {
+    margin: 15px 0 10px 0; /* Shrinks the 40px vertical paragraph padding */
+  }
+
+  /* ENVELOPE / IMAGE ADJUSTMENTS */
+  .invitation {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Fixes the offset alignment caused by the default negative margin */
+  .invitation img {
+    max-width: 280px;      /* Restricts height blowout on short horizontal viewports */
+    width: auto;
+    height: auto;
+    display: block;          
+    margin-left: 0;        /* Overrides the -25px pulling it off-center */
+    margin-right: 0;
+  }
+
+  .raffle-img {
+    margin-left: 10px;
+  }
+
+  .header-flourish,
+  .footer-flourish {
+    width: clamp(100px, 15vw, 250px);
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-flourish {
+    height: clamp(80px, 90vw, 300px); 
+    width: auto !important;          
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-flourish {
+    height: clamp(90px, 100vw, 140px); 
+    width: auto !important;          
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.header-flourish {
-  height: clamp(80px, 90vw, 300px); 
-  width: auto !important;          
-  object-fit: contain;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-flourish{
-   height: clamp(90px, 100vw, 140px); 
-  width: auto !important;          
-  object-fit: contain;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-}
-
-}
 
 @media screen and (max-width: 781px) {
   .landing-page {
