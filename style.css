@@ -10,9 +10,9 @@ body {
   background-color: #826349; 
   font-family: 'Times New Roman', Times, serif;
   color: #FFFDD0;
+  width: 100%;
+  overflow-x: hidden;
 }
-
-
 
 /* LANDING PAGE STYLES */
 .landing-page{
@@ -23,13 +23,14 @@ body {
     background-position: center; 
     background-size: cover; 
     color:#FFFDD0;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .landing-page header{
@@ -38,7 +39,7 @@ body {
   margin:150px 0;
   font-weight: 400;
   letter-spacing: 1px;
-  animation: fadeInUp 1s ease-out forwards; /* Added Landing Animation */
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .invitation{
@@ -49,7 +50,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   margin-top: -100px;
-  animation: fadeInUp 1.2s ease-out forwards; /* Added Landing Animation */
+  animation: fadeInUp 1.2s ease-out forwards;
 }
 
 .invitation a {
@@ -65,20 +66,15 @@ body {
   border-radius: 16px; 
   margin-left:-25px;
   animation: envelopeFloat 4s ease-in-out infinite;
-  
-  /* Multi-layered shadow for 3D realism */
   box-shadow: 
     0 4px 6px rgba(0, 0, 0, 0.15),
     0 10px 20px rgba(0, 0, 0, 0.25),
     inset 0 1px 1px rgba(255, 255, 255, 0.3);
-    
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .invitation img:hover {
   transform: translateY(-8px) scale(1.03);
-  
-  /* Deepens shadow on hover */
   box-shadow: 
     0 8px 12px rgba(0, 0, 0, 0.2),
     0 18px 32px rgba(0, 0, 0, 0.35),
@@ -89,7 +85,7 @@ body {
   font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
   text-align: center;
   font-style: italic;
-  animation: pulse 2s infinite, fadeInUp 1.4s ease-out forwards; /* Combined pulse and entrance */
+  animation: pulse 2s infinite, fadeInUp 1.4s ease-out forwards;
   margin-bottom: 100px;
   margin-top: 25px;
 }
@@ -99,15 +95,14 @@ body {
   background-image: none;
   background-color: #af9270;
   color:#FFFDD0;
-  width:100%;
-  margin:0;
-  padding:0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* NAVIGATION STYLES */
 nav{
-  width:100%;
+  width: 100%;
   font-weight: bold;
   font-family:Georgia, 'Times New Roman', Times, serif;
   text-align: center;
@@ -171,13 +166,15 @@ nav ul{
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 .01px;
+  max-width:100%;
+  padding: 0;
   box-sizing: border-box;
 }
 
 .header-text {
   text-align: center;
   flex: 1;
+  padding: 0 20px;
 }
 
 .header-flourish {
@@ -292,7 +289,6 @@ nav ul{
 }
 
 .section-divider .heart {
-  
   margin-top:20px;
 }
 
@@ -302,6 +298,7 @@ nav ul{
   padding:40px 20px;
   color:#feecda;
   margin-top:-50px;
+  width: 100%;
 }
 
 #Details h2{
@@ -336,8 +333,6 @@ nav ul{
 .rsvp-container:hover {
   transform: translateY(-5px);
   border-color: rgba(255, 253, 208, 0.6);
-  
-  /* Outer glow effect replacing the inset shadow */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 
 0 0 20px rgba(138, 35, 52, 0.6); 
 }
@@ -363,6 +358,7 @@ nav ul{
   align-items: stretch;
   gap: 20px;
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -402,6 +398,7 @@ nav ul{
   display: flex;
   justify-content: center;
   padding: 20px 20px;
+  width: 100%;
 }
 
 .location-card {
@@ -481,7 +478,8 @@ nav ul{
 #Registry {
   display: flex;
   justify-content: center;
-  padding:20px 20px;
+  padding: 20px 20px;
+  width: 100%;
 }
 
 .registry-card {
@@ -527,6 +525,7 @@ nav ul{
   padding: 20px 20px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .rsvp-container {
@@ -593,6 +592,7 @@ nav ul{
   display: flex;
   justify-content: center;
   padding: 20px 20px;
+  width: 100%;
 }
 
 .raffle-card {
@@ -668,10 +668,11 @@ nav ul{
 footer {
   background-color: #826349; 
   border-top: 1px solid rgba(255, 253, 208, 0.15);
-  padding: .1px 0; 
+  padding: 0; 
   display: flex;
   justify-content: center;
-  margin-top:40px;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .footer-container {
@@ -679,13 +680,15 @@ footer {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1px 1px; 
+  max-width: 100%;
+  padding: 0; 
+  box-sizing: border-box;
 }
 
 .footer-text {
   text-align: center;
   flex: 1;
-  width:100%;
+  padding: 0 20px;
 }
 
 .footer-text h4 {
@@ -706,7 +709,7 @@ footer {
 }
 
 .footer-flourish {
-  width: clamp(50px, 8vw, 75px);
+  width: clamp(90px, 100vw, 90px);
   height: auto;
   object-fit: contain;
 }
@@ -827,7 +830,7 @@ footer {
 /* ==========================================
    TABLET & MOBILE RESPONSIVE STYLES
    ========================================== */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (min-width: 782px) {
   .location-card,
   .registry-card,
   .rsvp-container,
@@ -836,21 +839,62 @@ footer {
     margin: 0 auto;
   }
 
+  #Home h1 {
+    margin-top: -20px; 
+  }
+  
+  #Home p:first-of-type {
+    margin-top: 10px; 
+  }
+
   .raffle-img{
     margin-left:10px;
   }
+/* HEADER & FOOTER FLOURISH IMAGE FIX */
+.header-flourish,
+.footer-flourish {
+  width: clamp(100px, 15vw, 250px);
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
 }
 
+.header-flourish {
+  height: clamp(80px, 90vw, 300px); 
+  width: auto !important;          
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
 
+.footer-flourish{
+   height: clamp(90px, 100vw, 140px); 
+  width: auto !important;          
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+}
 
 @media screen and (max-width: 781px) {
-  /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
   .landing-page {
     background-image: url('images/background-mobile.png'); 
     background-position: center;
     background-size: cover;
     justify-content: center; 
     padding: 20px 0;
+    width: 100%;
+  }
+
+  header, footer, nav, .footer-container, .header-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 
   .landing-page header {
@@ -858,7 +902,6 @@ footer {
     margin: 0 0 20px 0;
   }
 
-  /* MOBILE CENTERED ENVELOPE */
   .invitation {
     margin: 0 auto;
     width: 85%;
@@ -879,7 +922,6 @@ footer {
     margin-bottom: 0;
   }
 
-  /* NAVIGATION RESPONSIVENESS */
   nav ul {
     flex-wrap: wrap;
     gap: 12px 20px;
@@ -891,12 +933,10 @@ footer {
     font-size: 10px;
   }
 
-  /* HOME SECTION & FLOURISHES */
   .header-container {
     flex-direction: column;
     padding: 20px 10px 0 10px;
   }
-
 
   .header-flourish {
     display: none;
@@ -921,7 +961,6 @@ footer {
     font-size: 0.95rem;
   }
 
-  /* CARDS & LAYOUTS STACKING */
   .flow {
     flex-direction: column;
     align-items: center;
@@ -973,7 +1012,6 @@ footer {
     width: 100%;
   }
 
-  /* RAFFLE SECTION STACKING */
   .raffle-card {
     flex-direction: column;
     padding: 25px 20px;
@@ -1004,11 +1042,10 @@ footer {
     font-size: 2.5rem;
   }
 
-  /* FOOTER RESPONSIVENESS */
   .footer-container {
     flex-direction: column;
     gap: 15px;
-    padding: 20px 10px;
+    padding: 20px 15px;
   }
 
   .footer-flourish {
