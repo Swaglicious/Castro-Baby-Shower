@@ -3,16 +3,25 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    max-width: 100vw;
 }
 
 /* GLOBAL STYLES */
 body {
+  background-color: rgba(60, 40, 25, 0.45); 
   font-family: 'Times New Roman', Times, serif;
   color: #FFFDD0;
 }
 
+.site-wrapper {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 /* LANDING PAGE STYLES */
 .landing-page{
+    background-color: #b28e6a;
     font-family: "Imperial Script", cursive;
     background-image: url('images/background-light.png');
     background-repeat: no-repeat; 
@@ -98,13 +107,14 @@ body {
   padding:0;
 }
 
+
 /* NAVIGATION STYLES */
 nav{
   width:100%;
   font-weight: bold;
   font-family:Georgia, 'Times New Roman', Times, serif;
   text-align: center;
-  background-color: #826349;
+  background-color: rgba(60, 40, 25, 0.45); 
 }
 
 nav a{
@@ -659,7 +669,7 @@ nav ul{
 
 /* FOOTER */
 footer {
-  background-color: rgba(60, 40, 25, 0.45); 
+  background-color: #826349; 
   border-top: 1px solid rgba(255, 253, 208, 0.15);
   padding: .1px 0; 
   display: flex;
