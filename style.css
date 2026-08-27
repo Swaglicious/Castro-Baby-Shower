@@ -13,11 +13,7 @@ body {
   color: #FFFDD0;
 }
 
-.site-wrapper {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+
 
 /* LANDING PAGE STYLES */
 .landing-page{
