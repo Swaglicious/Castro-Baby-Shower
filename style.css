@@ -818,7 +818,7 @@ footer {
 }
 
 /* MOBILE STYLES (Under 768px) */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
   .landing-page {
     background-image: url('images/background-mobile.png'); 
@@ -843,8 +843,9 @@ footer {
   }
 
   .invitation img {
-    margin-left: 0; 
-    width: 100%;
+    margin: 0 auto;
+    width: 50%;
+    height:auto;
   }
 
   .landing-page p {
@@ -862,7 +863,7 @@ footer {
   }
 
   nav li{
-    font-size: 12px;
+    font-size: 9.5px;
   }
 
   /* HOME SECTION & FLOURISHES */
