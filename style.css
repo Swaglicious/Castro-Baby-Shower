@@ -92,7 +92,6 @@ body {
 /* INVITATION CONTAINER STYLES */
 .container{
   background-image: none;
-  background-color: #b8936c;
   color:#FFFDD0;
   width:100%;
   margin:0;
@@ -286,7 +285,7 @@ nav ul{
 }
 
 .section-divider .heart {
-  align-content: top;
+  
   margin-top:20px;
 }
 
