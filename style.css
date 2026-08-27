@@ -30,7 +30,7 @@ body {
 }
 
 .landing-page header{
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 3vw + 0.5rem, 2.8rem);
   text-align: center;
   margin:150px 0;
   font-weight: 400;
@@ -81,7 +81,7 @@ body {
 }
 
 .landing-page p{
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
   text-align: center;
   font-style: italic;
   animation: pulse 2s infinite; 
@@ -175,7 +175,7 @@ nav ul{
 }
 
 .header-flourish {
-  width: 280px;
+  width: clamp(100px, 15vw, 280px);
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -192,13 +192,13 @@ nav ul{
 
 #Home p:first-of-type{
   font-family: "MonteCarlo", cursive;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1vw + 0.5rem, 1.5rem);
   color: #fffffd;
   margin-bottom: 5px;
 }
 
 #Home h1{
-  font-size: 6rem;
+  font-size: clamp(3.2rem, 6vw + 1rem, 6rem);
   font-family: "MonteCarlo", cursive;
   letter-spacing: 2px;
   color:#ffe8c6;
@@ -209,7 +209,7 @@ nav ul{
 
 .subtitle{
   font-family: 'Times New Roman', Times, serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.3rem, 1.5vw + 0.5rem, 2.2rem);
   letter-spacing: 0.2em;
   margin-top:-30px;
   color:#fffffd;
@@ -242,7 +242,7 @@ nav ul{
 
 .date{
   font-family:'Times New Roman', Times, serif;
-  font-size:1.9rem;
+  font-size: clamp(1.3rem, 1.2vw + 0.5rem, 1.9rem);
   margin-top: 15px;
   color:#fffffd;
   text-transform: uppercase;
@@ -251,7 +251,7 @@ nav ul{
 
 .tagline{
   font-family: 'Times New Roman', Times, serif ;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 0.5vw + 0.7rem, 1.1rem);
   margin-top: 15px;
   color:#fffffd;
   letter-spacing: 0.18em;
@@ -300,7 +300,7 @@ nav ul{
 
 #Details h2{
   font-family: "MonteCarlo", cursive;
-  font-size:2.5rem;
+  font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem);
   color:#8a2334;
   letter-spacing:1px;
   font-weight: normal;
@@ -308,7 +308,7 @@ nav ul{
 }
 
 .sub{
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.8vw + 0.5rem, 1.2rem);
   color:#fffffd;
   margin-bottom: 18px;
   margin-top:-28px;
@@ -332,7 +332,8 @@ nav ul{
   border-color: rgba(255, 253, 208, 0.6);
   
   /* Outer glow effect replacing the inset shadow */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(138, 35, 52, 0.6); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 
+0 0 20px rgba(138, 35, 52, 0.6); 
 }
 
 .cards {
@@ -443,7 +444,7 @@ nav ul{
 
 .location-details h2 {
   font-family: "MonteCarlo", cursive;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem);
   font-weight:bold;
   margin-bottom: 15px;
   color: #8a2334;
@@ -490,7 +491,7 @@ nav ul{
 
 .registry-card h2 {
   font-family: "MonteCarlo", cursive;
-  font-size: 3rem;
+  font-size: clamp(2.4rem, 3vw + 0.5rem, 3rem);
   font-weight: normal;
   color: #8a2334;
   margin-bottom: 10px;
@@ -535,7 +536,7 @@ nav ul{
 
 .section-title {
   font-family: "MonteCarlo", cursive;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem);
   color: #8a2334;
   letter-spacing: 0.1em;
   margin-bottom: 2.5px;
@@ -638,7 +639,7 @@ nav ul{
 
 .raffle-details h2 {
   font-family: "MonteCarlo", cursive;
-  font-size: 3.2rem;
+  font-size: clamp(2.5rem, 3vw + 0.5rem, 3.2rem);
   font-weight: normal;
   color: #8a2334;
   margin: 0 0 10px 0;
@@ -683,7 +684,7 @@ footer {
 
 .footer-text h4 {
   font-family: "MonteCarlo", cursive;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem);
   color:#ffe8c6;
   margin: 0 0 6px 0;
   line-height: 1;
@@ -699,7 +700,7 @@ footer {
 }
 
 .footer-flourish {
-  width: 75px;
+  width: clamp(50px, 8vw, 75px);
   height: auto;
   object-fit: contain;
 }
@@ -808,18 +809,6 @@ footer {
 
 /* TABLET STYLES (Under 992px) */
 @media (max-width: 992px) {
-  .header-flourish {
-    width: 180px;
-  }
-
-  #Home h1 {
-    font-size: 4.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.8rem;
-  }
-
   .location-card,
   .registry-card,
   .rsvp-container,
@@ -832,10 +821,10 @@ footer {
 @media (max-width: 768px) {
   /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
   .landing-page {
-    background-image: url('images/background-mobile.png'); /* Replace with your mobile image path */
+    background-image: url('images/background-mobile.png'); 
     background-position: center;
     background-size: cover;
-    justify-content: center; /* Center contents vertically */
+    justify-content: center; 
     padding: 20px 0;
   }
 
@@ -854,7 +843,7 @@ footer {
   }
 
   .invitation img {
-    margin-left: 0; /* Remove offset so image aligns dead center */
+    margin-left: 0; 
     width: 100%;
   }
 
