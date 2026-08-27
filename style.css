@@ -818,7 +818,7 @@ footer {
 }
 
 /* MOBILE STYLES (Under 768px) */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   /* MOBILE BACKGROUND & VERTICAL CENTERING FOR LANDING PAGE */
   .landing-page {
     background-image: url('images/background-mobile.png'); 
