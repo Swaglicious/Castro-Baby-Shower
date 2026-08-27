@@ -827,7 +827,7 @@ footer {
 /* ==========================================
    TABLET & MOBILE RESPONSIVE STYLES
    ========================================== */
-@media screen and (max-width: 1200px) and (min-width: 782px) {
+@media screen and (max-width: 1210px) and (min-width: 782px) {
   .location-card,
   .registry-card,
   .rsvp-container,
@@ -842,6 +842,17 @@ footer {
   
   #Home p:first-of-type {
     margin-top: 10px; 
+  }
+
+   .landing-page {
+    margin-top:-80px;
+    
+  }
+
+  .landing-page img{
+    width:80%;
+    height:auto;
+    margin: 0 auto;
   }
 
   .raffle-img{
@@ -899,12 +910,15 @@ footer {
     margin: 0 0 20px 0;
   }
 
+ 
+
   .invitation {
     margin: 0 auto;
     width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top:20px;
   }
 
   .invitation img {
