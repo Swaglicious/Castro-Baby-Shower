@@ -849,12 +849,8 @@ footer {
   }
 }
 
-/* ==========================================
-   TABLET & MOBILE RESPONSIVE STYLES
-   ========================================== */
-/* ==========================================
-   TABLET & MOBILE HORIZONTAL RESPONSIVE STYLES
-   ========================================== */
+
+/*  TABLET & MOBILE HORIZONTAL RESPONSIVE STYLES */
 @media screen and (max-width: 1210px) and (min-width: 782px) {
   .location-card,
   .registry-card,
@@ -881,16 +877,16 @@ footer {
     justify-content: center; 
     text-align: center;      
     min-height: 100vh;
-    padding: 20px 0; /* Add safety breathing room for short landscape screens */
+    padding: 20px 0; 
   }
 
   /* REDUCE LARGE MARGINS FOR HORIZONTAL VIEWS */
   .landing-page header {
-    margin: 10px 0 15px 0; /* Shrinks the massive 200px top margin so it fits */
+    margin: 10px 0 15px 0; 
   }
 
   .landing-page p {
-    margin: 15px 0 10px 0; /* Shrinks the 40px vertical paragraph padding */
+    margin: 15px 0 10px 0; 
   }
 
   /* ENVELOPE / IMAGE ADJUSTMENTS */
@@ -903,11 +899,11 @@ footer {
 
   /* Fixes the offset alignment caused by the default negative margin */
   .invitation img {
-    max-width: 280px;      /* Restricts height blowout on short horizontal viewports */
+    max-width: 280px;     
     width: auto;
     height: auto;
     display: block;          
-    margin-left: 0;        /* Overrides the -25px pulling it off-center */
+    margin-left: 0;     
     margin-right: 0;
   }
 
